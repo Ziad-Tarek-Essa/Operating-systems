@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+int space_remover(char* met2ta3a[],char command[])
+{
+    int i=0;
+    met2ta3a[i]=strtok(command," ");
+//starts with space
+    if (met2ta3a[i]==NULL)
+    {
+        return 1;
+    }
+    while(met2ta3a[i] != NULL)
+    {
+        i++;
+        met2ta3a[i]=strtok(NULL," ");
+    }
+    return 1;
+}
+int main()
+{
+    FILE *fp1,*fp2;
+    char str[100];
+    char *met[100];
+    int x,y,kk=0,i,j;
+    fp1=fopen("INPUT.txt","r");
+    fp2=fopen("output.txt","w");
+    if (!fp1)
+        return 1;
+   // fscanf(fp1,"%[^\n]", str);
+    fgets(str, 100, fp1);
+    space_remover(met,str);
+    x=atoi(met[1]);
+    y=atoi(met[0]);
+    int arr[x][y];
+  for(i=0;i<y;i++){
+    fgets(str, 100, fp1);
+     space_remover(met,str);
+   for(j=0;j<x;j++){
+    //puts(met[j]);
+    arr[i][j]=atoi(met[j]);
+    //   printf("%d   \n",arr[i][j]);
+
+   }
+   }
+printf("\n\n");
+   for (i = 0; i < y; i++) {
+        for (j = 0; j < x; j++) {
+                printf("%d  ",arr[i][j]);
+  }
+  printf("\n");
+  }
+
+
+
+//  printf("%d   %d",arr[0][3],arr[0][4]);
+
+
+
+printf("\n\n\n\n\n\n");
+
+   fgets(str, 100, fp1);
+    space_remover(met,str);
+    x=atoi(met[1]);
+    y=atoi(met[0]);
+    int arr1[x][y];
+  for(i=0;i<y;i++){
+    fgets(str, 100, fp1);
+     space_remover(met,str);
+   for(j=0;j<x;j++){
+    //puts(met[j]);
+    arr1[i][j]=atoi(met[j]);
+   }
+   }
+
+
+   for (i = 0; i < y; i++) {
+        for (j = 0; j < x; j++) {
+                printf("%d  ",arr1[i][j]);
+  }
+  printf("\n");
+  }
+  //  while (fgets(str, 1000, fp1) != NULL)
+  //  {
+  //  }
+  //  printf("%s", str);
+    //printf("\n%c %c",str[0],str[1]);
+
+    //char in[x][y];
+
+    //char out[][];
+    fclose(fp1);
+    fclose(fp2);
+    return 0;
+}

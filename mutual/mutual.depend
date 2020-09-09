@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1545090320 source:e:\workspace\c\os\mutual\main.c
+	<stdio.h>
+	<stdlib.h>
+	<signal.h>
+	<time.h>
+	<unistd.h>
+	<pthread.h>
+
